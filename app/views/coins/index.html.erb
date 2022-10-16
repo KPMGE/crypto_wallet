@@ -5,6 +5,7 @@
 <div id="coins">
   <% @coins.each do |coin| %>
     <%= render coin %>
+    <%= image_tag coin.url_image, size:"30x30" %>
     <p>
       <%= link_to "Show this coin", coin %>
     </p>
