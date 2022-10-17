@@ -1,6 +1,13 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
 <h1> 1 + 1 = <%= 1+1 %> </h1>
+<p>
+  <strong>US Date: </strong>
+  <%= Date.today %>
+</p>
+<p>
+  <strong>BR Date: </strong>
+  <%= br_date(Date.today) %>
+</p>
 
 <ul>
   <!-- This is not the preferred way of doing that, we should use the link_to helper -->
