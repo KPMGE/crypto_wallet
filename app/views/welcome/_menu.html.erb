@@ -1,0 +1,8 @@
+<h5>Hey, i've been rendered from a partial!</h5>
+<ul>
+  <!-- This is not the preferred way of doing that, we should use the link_to helper -->
+  <a href="/coins">Cadastro de moedas</a>
+  <br/>
+  <!-- This is the best way of creating links, cuz this code is more flexibe, as it's ruby code -->
+  <%= link_to "Cadastro de moedas", coins_path %>
+</ul>
