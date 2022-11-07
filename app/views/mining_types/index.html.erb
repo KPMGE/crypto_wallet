@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mining types</h1>
+
+<div id="mining_types">
+  <% @mining_types.each do |mining_type| %>
+    <%= render mining_type %>
+    <p>
+      <%= link_to "Show this mining type", mining_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mining type", new_mining_type_path %>

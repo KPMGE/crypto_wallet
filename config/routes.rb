@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mining_types
   # we can create our own routes, passing in the method, the route and the method of the controller that
   # should be triggered.
   get 'welcome/test', to: 'welcome#index'
