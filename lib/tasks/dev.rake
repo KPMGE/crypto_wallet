@@ -9,6 +9,7 @@ namespace :dev do
       show_spinner('Migrate database...') { `rails db:migrate` }
       show_spinner('Apply seeds...') { `rails db:seed` }
       `rails dev:add_coins`
+      `rails dev:add_mining_types`
     end
   end
 
@@ -33,6 +34,27 @@ namespace :dev do
         }
       ]
       coins.each { |coin| Coin.find_or_create_by!(coin) }
+    end
+  end
+
+  desc 'add initial mining types to the database'
+  task add_mining_types: :environment do
+    show_spinner('Add MiningTypes to the database...') do
+      mining_types = [
+        {
+          description: 'Proof of Work',
+          acronym: 'PoW'
+        },
+        {
+          description: 'Proof of Stake',
+          acronym: 'PoS'
+        },
+        {
+          description: 'Proof of Capacity',
+          acronym: 'PoC'
+        }
+      ]
+      mining_types.each { |mining_type| MiningType.find_or_create_by!(mining_type) }
     end
   end
 
